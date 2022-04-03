@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-//import java.io.IOException;
 
 @ControllerAdvice
 public class ResponseExceptionHandler {
