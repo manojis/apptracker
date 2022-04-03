@@ -3,6 +3,10 @@ package com.sojern.apptracker.exception;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+/**
+ * @author Manoj
+ */
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class ErrorResponse {

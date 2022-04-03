@@ -1,5 +1,9 @@
 package com.sojern.apptracker.exception;
 
+/**
+ * @author Manoj
+ */
+
 public class trackerServiceException extends RuntimeException {
 	
 	private String code;

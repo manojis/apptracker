@@ -1,6 +1,5 @@
 package com.sojern.apptracker.rest;
 
-import com.sojern.apptracker.exception.ImageNotFoundException;
 import com.sojern.apptracker.service.trackerService;
 
 import java.io.IOException;
@@ -19,6 +18,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author Manoj
+ */
+
 @RestController
 @EnableAutoConfiguration
 @RequestMapping("/")
@@ -35,7 +38,7 @@ public class TrackerRestService {
     @Scope("request")
     @RequestMapping(value = "ping", method = RequestMethod.GET, 
     produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getFileStatus (
+    public ResponseEntity<String> getFileStatus (
     		@RequestParam(value="path",required = false) String filePath, 
     		@RequestParam(value="name",required = false) String fileName) {
         
@@ -64,7 +67,7 @@ public class TrackerRestService {
     @Scope("request")
     @RequestMapping(value = "img", method = RequestMethod.GET, 
     produces = MediaType.IMAGE_JPEG_VALUE)
-    public ResponseEntity getImage () throws IOException {
+    public ResponseEntity<ByteArrayResource> getImage () throws IOException {
     	
     	int size=0;
     	byte[] response;
